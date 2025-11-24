@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>AyoDJ - Report an Issue</title>
+    <meta name="description" content="Report issues with the AyoDJ professional DJ turntable and scratch emulator app">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎵 AyoDJ Issue Reporting</h1>
+            <p class="subtitle">Help us improve your DJ experience</p>
+        </header>
+
+        <main>
+            <form id="issueForm" class="issue-form">
+                <!-- Platform Selection -->
+                <div class="form-group">
+                    <label for="platform">Platform <span class="required">*</span></label>
+                    <select id="platform" name="platform" required>
+                        <option value="">Select platform...</option>
+                        <option value="Android">Android</option>
+                        <option value="iOS">iOS</option>
+                        <option value="Both">Both platforms</option>
+                    </select>
+                </div>
+
+                <!-- Issue Type -->
+                <div class="form-group">
+                    <label for="issueType">Issue Type <span class="required">*</span></label>
+                    <select id="issueType" name="issueType" required>
+                        <option value="">Select type...</option>
+                        <option value="Bug">Bug / Crash</option>
+                        <option value="Audio">Audio Issue</option>
+                        <option value="Performance">Performance / Lag</option>
+                        <option value="Subscription">Subscription / Billing</option>
+                        <option value="UI">UI / Display Issue</option>
+                        <option value="Feature">Feature Request</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <!-- App Version (optional) -->
+                <div class="form-group">
+                    <label for="appVersion">App Version</label>
+                    <input type="text" id="appVersion" name="appVersion" placeholder="e.g., 1.0.5 (optional)" aria-describedby="appVersionHelp">
+                    <small id="appVersionHelp">Find this in Settings → About</small>
+                </div>
+
+                <!-- Device Info (optional) -->
+                <div class="form-group">
+                    <label for="deviceInfo">Device Information</label>
+                    <input type="text" id="deviceInfo" name="deviceInfo" placeholder="e.g., Samsung Galaxy S23, Android 14 (optional)">
+                </div>
+
+                <!-- Issue Title -->
+                <div class="form-group">
+                    <label for="title">Issue Title <span class="required">*</span></label>
+                    <input type="text" id="title" name="title" required maxlength="200" placeholder="Brief description of the issue">
+                    <small id="titleCounter">0/200 characters</small>
+                </div>
+
+                <!-- Issue Description -->
+                <div class="form-group">
+                    <label for="description">Detailed Description <span class="required">*</span></label>
+                    <textarea id="description" name="description" required maxlength="2000" rows="6" placeholder="Please describe the issue in detail. Include:&#10;- What you were doing when the issue occurred&#10;- What you expected to happen&#10;- What actually happened&#10;- Steps to reproduce (if applicable)"></textarea>
+                    <small id="descCounter">0/2000 characters</small>
+                </div>
+
+                <!-- Contact Email (optional) -->
+                <div class="form-group">
+                    <label for="email">Contact Email (optional)</label>
+                    <input type="email" id="email" name="email" placeholder="your.email@example.com" aria-describedby="emailHelp">
+                    <small id="emailHelp">We'll only use this to follow up on your issue if needed</small>
+                </div>
+
+                <!-- Honeypot field (security) -->
+                <input type="text" name="website" id="website" class="honeypot" tabindex="-1" autocomplete="off">
+
+                <!-- Submit Button -->
+                <div class="form-actions">
+                    <button type="submit" id="submitBtn" class="btn-submit">
+                        <span class="btn-text">Submit Issue</span>
+                        <span class="btn-loading" style="display: none;">Submitting...</span>
+                    </button>
+                </div>
+
+                <!-- Success/Error Messages -->
+                <div id="successMessage" class="message success" style="display: none;">
+                    ✓ Thank you! Your issue has been recorded. We'll review it soon.
+                </div>
+                <div id="errorMessage" class="message error" style="display: none;">
+                    ✗ Oops! Something went wrong. Please try again or contact support directly.
+                </div>
+            </form>
+
+            <div class="info-section">
+                <h3>Before submitting...</h3>
+                <ul>
+                    <li>Check if your issue has already been reported in our <a href="https://github.com/realmrhigh/AyoDj-Issues/issues" target="_blank" rel="noopener noreferrer">issue tracker</a></li>
+                    <li>Make sure you're using the latest version of AyoDJ</li>
+                    <li>Try restarting the app to see if the issue persists</li>
+                    <li>For urgent support, contact us directly at support@ayodj.com</li>
+                </ul>
+            </div>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 AyoDJ. All rights reserved.</p>
+            <p><a href="https://github.com/realmrhigh/AyoDj-Issues" target="_blank" rel="noopener noreferrer">View all issues on GitHub</a></p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

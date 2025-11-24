@@ -79,7 +79,8 @@ ${data.email ? `\n## Contact\n\nEmail: ${data.email}` : ''}
             headers: {
                 'Authorization': `token ${process.env.GITHUB_TOKEN}`,
                 'Content-Type': 'application/json',
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
             },
             body: JSON.stringify({
                 title: issueTitle,
@@ -183,7 +184,8 @@ ${data.email ? `\n## Contact\n\nEmail: ${data.email}` : ''}
             headers: {
                 'Authorization': `token ${process.env.GITHUB_TOKEN}`,
                 'Content-Type': 'application/json',
-                'Accept': 'application/vnd.github.v3+json'
+                'Accept': 'application/vnd.github+json',
+                'X-GitHub-Api-Version': '2022-11-28'
             },
             body: JSON.stringify({
                 title: issueTitle,

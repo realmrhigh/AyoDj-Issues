@@ -38,7 +38,9 @@ function setupCharacterCounters() {
 
 // Input sanitization
 function sanitizeInput(input) {
-    // Remove potential XSS vectors
+    // Basic sanitization for demonstration
+    // NOTE: In production, rely on server-side sanitization and validation
+    // This client-side sanitization is a first line of defense only
     return input
         .replace(/[<>]/g, '') // Remove angle brackets
         .trim();
@@ -47,6 +49,7 @@ function sanitizeInput(input) {
 // Email validation
 function isValidEmail(email) {
     if (!email) return true; // Email is optional
+    // Basic regex validation - HTML5 input type="email" provides additional validation
     const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return regex.test(email);
 }
